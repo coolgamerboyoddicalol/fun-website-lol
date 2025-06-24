@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>oddi.ca</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-size: contain;
+      background-color: black;
+      background-size: cover;
+      background-position: center top;
+      color: white;
+    }
+
+    #left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    #gif-banner {
+      width: 100%;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #gif-banner img {
+      width: 80%;
+      max-width: 208px;
+      height: auto;
+    }
+
+	#oddica-title {
+	text-align: center;
+	font-size: 64px;
+	font-weight: bold;
+	margin-top: 20px;
+	color: white;
+	letter-spacing: 2px;
+	font-family: monospace;
+	}	
+
+    #downloads {
+      position: absolute;
+      top: 380px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    #downloads ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #downloads li {
+      margin: 5px 0;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: gray;
+      font-size: 0.9rem;
+    }
+
+    img {
+      width: 150px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    a:hover {
+      color: crimson;
+    }
+	
+	.star {
+	position: fixed;
+	top: -10px;
+	width: 4px;
+	height: 4px;
+	background: white;
+	border-radius: 50%;
+	opacity: 0.8;
+	animation: fall 3s linear forwards;
+	z-index: 999;
+	}
+
+	@keyframes fall {
+	0% {
+		transform: translateY(0) translateX(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(100vh) translateX(30px);
+		opacity: 0;
+	}
+	}
+  </style>
+</head>
+<body>
+  <div id="gif-banner">
+  <img src="anime-girl.gif" alt="Top Banner GIF">
+</div>
+
+<a href="https://t.me/pqkwq" target="_blank" style="text-decoration: none;">
+  <div id="oddica-title">ODDI.CA</div>
+</a>
+<div class="line-separator"></div>
+
+  <div id="downloads">
+    <ul>
+      <li><a href="https://files.catbox.moe/q93omt.zip" download>Download - vilebin.sh Database</a></li>
+      <li><a href="https://files.catbox.moe/japhg4.csv" download>Download - waa.org Database</a></li>
+    </ul>
+  </div>
+
+  <audio autoplay loop>
+    <source src="kill me, sarah.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+	<footer>dead, died</footer>
+
+	<script>
+	function createStar() {
+		const star = document.createElement('div');
+		star.classList.add('star');
+		star.style.left = Math.random() * window.innerWidth + 'px';
+		star.style.animationDuration = (2 + Math.random() * 3) + 's';
+		document.body.appendChild(star);
+
+		setTimeout(() => {
+		star.remove();
+		}, 4000);
+	}
+
+	setInterval(createStar, 150);
+	</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const audio = document.querySelector("audio");
+    if (audio) {
+      audio.volume = 0.05; // Volume ranges from 0.0 (silent) to 1.0 (full)
+    }
+  });
+</script>
+
+</body>
+</html>
