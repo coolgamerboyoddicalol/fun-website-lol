@@ -1,124 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>oddi.ca</title>
+  <meta charset="UTF-8" />
+  <title>ODDICA</title>
   <style>
     body {
-      margin: 0;
-      font-family: sans-serif;
-      background-size: contain;
       background-color: black;
-      background-size: cover;
-      background-position: center top;
       color: white;
-    }
-
-    #left {
+      margin: 0;
+      padding-top: 60px;
+      font-family: monospace;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
+      min-height: 100vh;
     }
 
-    #gif-banner {
+    #logo {
+      margin-bottom: px;
+    }
+
+    #logo img {
+      max-width: 500px;
       width: 100%;
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    #gif-banner img {
-      width: 80%;
-      max-width: 208px;
       height: auto;
+      display: block;
     }
-
-	#oddica-title {
-	text-align: center;
-	font-size: 64px;
-	font-weight: bold;
-	margin-top: 20px;
-	color: white;
-	letter-spacing: 2px;
-	font-family: monospace;
-	}	
 
     #downloads {
-      position: absolute;
-      top: 380px;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
+      text-align: left;
+      width: 320px;
+      margin-bottom: 60px;
     }
 
     #downloads ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
 
     #downloads li {
-      margin: 5px 0;
+      margin: 8px 0;
+    }
+
+    #downloads li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    #downloads li a:hover {
+      color: crimson;
     }
 
     footer {
-      position: fixed;
-      bottom: 10px;
-      width: 100%;
       text-align: center;
       color: gray;
       font-size: 0.9rem;
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
     }
-
-    img {
-      width: 150px;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    a:hover {
-      color: crimson;
-    }
-	
-	.star {
-	position: fixed;
-	top: -10px;
-	width: 4px;
-	height: 4px;
-	background: white;
-	border-radius: 50%;
-	opacity: 0.8;
-	animation: fall 3s linear forwards;
-	z-index: 999;
-	}
-
-	@keyframes fall {
-	0% {
-		transform: translateY(0) translateX(0);
-		opacity: 1;
-	}
-	100% {
-		transform: translateY(100vh) translateX(30px);
-		opacity: 0;
-	}
-	}
   </style>
 </head>
 <body>
-  <div id="gif-banner">
-  <img src="anime-girl.gif" alt="Top Banner GIF">
-</div>
 
-<a href="https://t.me/pqkwq" target="_blank" style="text-decoration: none;">
-  <div id="oddica-title">ODDI.CA</div>
-</a>
-<div class="line-separator"></div>
+  <div id="logo">
+    <img src="raw.png" alt="ODDICA Logo" />
+  </div>
 
   <div id="downloads">
     <ul>
@@ -127,37 +77,17 @@
     </ul>
   </div>
 
-  <audio autoplay loop>
-    <source src="kill me, sarah.mp3" type="audio/mpeg">
+  <audio id="bg-audio" autoplay loop>
+    <source src="kill me, sarah.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
   </audio>
 
-	<footer>dead, died</footer>
+  <footer>dead, died</footer>
 
-	<script>
-	function createStar() {
-		const star = document.createElement('div');
-		star.classList.add('star');
-		star.style.left = Math.random() * window.innerWidth + 'px';
-		star.style.animationDuration = (2 + Math.random() * 3) + 's';
-		document.body.appendChild(star);
-
-		setTimeout(() => {
-		star.remove();
-		}, 4000);
-	}
-
-	setInterval(createStar, 150);
-	</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const audio = document.querySelector("audio");
-    if (audio) {
-      audio.volume = 0.05; // Volume ranges from 0.0 (silent) to 1.0 (full)
-    }
-  });
-</script>
+  <script>
+    const audio = document.getElementById('bg-audio');
+    audio.volume = 0.1;
+  </script>
 
 </body>
 </html>
